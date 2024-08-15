@@ -1,0 +1,39 @@
+train.py usage
+
+Run train.py with the Required Arguments
+
+To start training, you need to provide the path to your dataset directory as the first argument. You can also provide optional arguments like --save_dir, --arch, --learning_rate, --hidden_units, --epochs, and --gpu.
+
+Here’s an example command to start the training: python train.py flowers --save_dir checkpoints --arch vgg16 --learning_rate 0.001 --hidden_units 512 --epochs 5 --gpu
+
+Explanation of the Command:
+
+python train.py flowers: This runs the train.py script, specifying that the dataset is located in the flowers directory.
+--save_dir checkpoints: Specifies that the model checkpoint should be saved in a directory named checkpoints. (You may need to create this directory if it doesn't exist.)
+--arch vgg16: Specifies the model architecture to use (e.g., vgg16).
+--learning_rate 0.001: Sets the learning rate for training.
+--hidden_units 512: Specifies the number of hidden units in the classifier.
+--epochs 5: Specifies the number of epochs for training.
+--gpu: If included, this will enable GPU training (assuming you have a GPU available and configured).
+
+The command I ran: python train.py flowers --save_dir checkpoints --arch vgg16 --epochs 5
+
+=============================================
+predict.py usage
+
+Run predict.py with Required Arguments:
+
+The basic usage of predict.py requires the path to an image file and the path to the saved model checkpoint. You can also pass additional arguments like --top_k, --category_names, and --gpu to customize the predictions.
+
+Here’s an example command: python predict.py /path/to/image.jpg checkpoint.pth --top_k 5 --category_names cat_to_name.json --gpu
+
+Explanation of the Command:
+
+python predict.py: Runs the predict.py script.
+/path/to/image.jpg: The path to the image you want to classify.
+checkpoint.pth: The path to the model checkpoint file that was saved during training.
+--top_k 5 (optional): Returns the top 5 most likely classes.
+--category_names cat_to_name.json (optional): Uses a JSON file to map class indices to actual names.
+--gpu (optional): If you have a GPU available and want to use it for inference.
+
+The command I ran: python predict.py C:\Users\sebby\Downloads\Dendrobium-kingianum.jpg .\checkpoints\checkpoint.pth --top_k 3 --category_names cat_to_name.json      
